@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kiprotich Korir Portfolio</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #6C63FF;
+      --accent: #FF6584;
+      --text: #333;
+      --bg: #f9f9f9;
+      --card-bg: #ffffff;
+    }
+
+    [data-theme="dark"] {
+      --primary: #8ab4f8;
+      --accent: #FF95A3;
+      --text: #f1f1f1;
+      --bg: #121212;
+      --card-bg: #1f1f1f;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      transition: background 0.3s, color 0.3s;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      background: var(--card-bg);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+
+    .navbar {
+      max-width: 1200px;
+      margin: auto;
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar h1 {
+      font-size: 1.8rem;
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    .navbar nav a {
+      margin-left: 1.2rem;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .navbar nav a:hover {
+      color: var(--primary);
+    }
+
+    .theme-toggle {
+      background: none;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .theme-toggle:hover {
+      background: var(--primary);
+      color: white;
+    }
+
+    section {
+      padding: 5rem 2rem;
+      max-width: 1100px;
+      margin: auto;
+      text-align: center;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .about p,
+    .skills p,
+    .contact p {
+      max-width: 750px;
+      margin: auto;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .skill {
+      background: var(--card-bg);
+      padding: 1.5rem;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .skill:hover {
+      transform: translateY(-10px);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .project-card {
+      background: var(--card-bg);
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    input, textarea {
+      padding: 0.8rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      background: var(--card-bg);
+      color: var(--text);
+    }
+
+    button {
+      background: var(--primary);
+      color: white;
+      padding: 1rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: var(--accent);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: var(--card-bg);
+      color: #888;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .theme-toggle {
+        margin-top: 1rem;
+      }
+    }
+    .social-icons a {
+      margin: 0 1rem;
+      font-size: 2rem;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    img.profile {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--primary);
+      margin: 1rem 0;
+    }
+    .social-icons a:hover {
+      color: var(--primary);
+    }
+    .contact{
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body data-theme="light">
+
+  <header>
+    <div class="navbar">
+      <h1>Kiprotich Korir</h1>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <img src="Kiprotich.jpg" alt="Image of Kiprotich25" class="profile">
+    <p>I am a passionate web developer specializing in front-end web development. I create user-friendly and responsive web applications.</p>
+  </section>
+
+  <section id="skills" class="skills">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill">HTML</div>
+      <div class="skill">CSS</div>
+      <div class="skill">JavaScript</div>
+      <div class="skill">Git & GitHub</div>
+      <div class="skill">MySql</div>
+    </div>
+  </section>
+
+  <section id="projects" class="projects">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <h3>Personal Portfolio</h3>
+        <p>A fully responsive personal website showcasing my skills and projects.</p>
+      </div>
+      <div class="project-card">
+        <h3>Tourist Explorer Website</h3>
+        <p>A software that allows tourists to book group vacations in different african vacations</p>
+      </div>
+      <div class="project-card">
+        <h3>Sikio</h3>
+        <p>A software that books therapy sessions for its users.</p>
+      </div>
+    </div>
+</section>
+   
+  <section id="contact" class="contact">
+    <h2>Contact Me</h2>
+    <p>Reach out to me through the platforms below.I will be honoured to interact with you:</p><br><br>
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/ian-kiprotich-8816432a8?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BQePi1G0DQbmiwL2zQBS%2F7A%3D%3D" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:iankipro273@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+      <a href="https://github.com/kiprotich25" target="_blank"><i class="fab fa-github"></i></a>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Kiprotich25. All rights reserved<br>
+    <button class="theme-toggle" onclick="toggleTheme()">☀️/🌙</button>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      const body = document.body;
+      const current = body.getAttribute("data-theme");
+      const next = current === "light" ? "dark" : "light";
+      body.setAttribute("data-theme", next);
+    }
+  </script>
+
+</body>
+</html>
